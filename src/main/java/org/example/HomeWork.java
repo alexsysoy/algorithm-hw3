@@ -1,8 +1,5 @@
 package org.example;
 
-import java.util.List;
-
-
 public class HomeWork {
 
     /**
@@ -24,8 +21,24 @@ public class HomeWork {
      * Сигнатуру метода не меняем
      */
     public String findMaxSubstring(String str) {
-        //TODO реализовать метод
-        return null;
+        String tmp = "";
+        String result = "";
+        for (int i = 0; i < str.length(); i++) {
+            String c = String.valueOf(str.charAt(i));
+            if (tmp.contains(c)) {
+                int index = tmp.indexOf(c);
+                if (result.isBlank() || tmp.length() > result.length()) {
+                    result = tmp;
+                }
+                tmp = tmp.substring(index + 1) + c;
+            } else {
+                tmp = tmp + c;
+            }
+        }
+        if (result.isBlank() || tmp.length() > result.length()) {
+            result = tmp;
+        }
+        return result;
     }
 
 
@@ -40,6 +53,7 @@ public class HomeWork {
      * @see <a href="https://www.codewars.com/kata/545cedaa9943f7fe7b000048">https://www.codewars.com/kata/545cedaa9943f7fe7b000048</a>
      */
     public boolean check(String sentence){
+        // пока не успеваю
         return false;
     }
 
